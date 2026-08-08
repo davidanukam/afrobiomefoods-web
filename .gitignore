@@ -1,7 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # AI
-DESIGN-BRIEF.md
 AGENTS.md
 CLAUDE.md
 AGENTS.local.md
