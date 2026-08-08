@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --leaf: #1b4332;
+  --leaf-mid: #2d6a4f;
+  --leaf-bright: #40916c;
+  --soil: #4a3428;
+  --earth: #7a5c45;
+  --canvas: #f2f4ef;
+  --canvas-deep: #e4e9df;
+  --ink: #141814;
+  --fog: #f7f8f5;
+  --eggplant: #5c2a4a;
+  --white: #ffffff;
+}
+
+@theme inline {
+  --color-leaf: var(--leaf);
+  --color-leaf-mid: var(--leaf-mid);
+  --color-leaf-bright: var(--leaf-bright);
+  --color-soil: var(--soil);
+  --color-earth: var(--earth);
+  --color-canvas: var(--canvas);
+  --color-canvas-deep: var(--canvas-deep);
+  --color-ink: var(--ink);
+  --color-fog: var(--fog);
+  --color-eggplant: var(--eggplant);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-figtree);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-figtree), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--leaf-bright) 35%, white);
+  color: var(--ink);
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-ken-burns {
+  animation: ken-burns 18s ease-out forwards;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-pad {
+  padding-inline: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+.prose-afro {
+  max-width: 42rem;
+}
+
+.prose-afro p + p {
+  margin-top: 1.1rem;
+}
