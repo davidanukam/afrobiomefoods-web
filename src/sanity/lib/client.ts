@@ -5,10 +5,8 @@ export const client = createClient({
   projectId: projectId || "placeholder",
   dataset,
   apiVersion,
-  useCdn: true,
-  stega: {
-    studioUrl: "/studio",
-  },
+  // Studio auth uses credentials; keep CDN off to avoid Sanity's override warning.
+  useCdn: false,
 });
 
 /** Write client for seeding / mutations (server-only). */
