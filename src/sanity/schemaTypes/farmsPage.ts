@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { pageSectionsField } from "./sections";
 
 export const farmsPage = defineType({
   name: "farmsPage",
@@ -38,6 +39,7 @@ export const farmsPage = defineType({
       type: "image",
       options: { hotspot: true },
     }),
+    pageSectionsField,
   ],
   preview: { prepare: () => ({ title: "Farms & Facilities" }) },
 });

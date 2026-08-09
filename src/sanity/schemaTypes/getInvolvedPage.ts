@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { pageSectionsField } from "./sections";
 
 export const getInvolvedPage = defineType({
   name: "getInvolvedPage",
@@ -48,6 +49,7 @@ export const getInvolvedPage = defineType({
     defineField({ name: "newsletterHeadline", title: "Bottom newsletter headline", type: "string" }),
     defineField({ name: "newsletterBody", title: "Bottom newsletter body", type: "text", rows: 2 }),
     defineField({ name: "newsletterCtaLabel", title: "Bottom newsletter CTA", type: "string" }),
+    pageSectionsField,
   ],
   preview: { prepare: () => ({ title: "Get Involved" }) },
 });

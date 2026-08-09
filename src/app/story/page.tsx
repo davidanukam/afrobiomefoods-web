@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 import { PageHero } from "@/components/PageHero";
+import { SectionRenderer } from "@/components/SectionRenderer";
 import { SiteShell } from "@/components/SiteShell";
 import { getStoryPage } from "@/sanity/lib/load-query";
 
@@ -109,6 +110,8 @@ export default async function StoryPage() {
           </div>
         </div>
       </section>
+
+      <SectionRenderer sections={page.sections} />
     </SiteShell>
   );
 }

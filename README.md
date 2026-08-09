@@ -74,6 +74,40 @@ npm run seed
 4. Click **Publish**.
 5. The public site refreshes via the revalidate webhook (see below)—usually within seconds. Without the webhook, content still updates within ~60s (ISR) or on the next deploy.
 
+### Add crop / produce cards
+
+1. Studio → **Our Crops**
+2. Under **Leafy greens** or **Vegetables & pods**, click **Add item**
+3. Fill name, aka, description, and optional **Card image**
+4. Publish → `/crops` updates
+
+Same “Add item” pattern works for farms, impact metrics, donation tiers, pillars, and footer locations.
+
+### Add new sections to an existing page
+
+Every main page has **Extra / custom sections** at the bottom. Add:
+
+- Hero
+- Text block
+- **Card grid** (add as many cards as you want, with images)
+- Metrics
+- Image + text
+- Call to action
+
+Reorder sections by dragging. Publish when done.
+
+### Create a brand-new page
+
+1. Studio → **Custom Pages** → Create
+2. Set **Title** and generate a **Slug** (URL becomes `/your-slug`)
+3. Optionally enable **Show in main navigation**
+4. Add sections (start with a Hero, then Card grids, etc.)
+5. Publish
+
+Avoid reserved slugs: `story`, `farms`, `crops`, `impact`, `get-involved`, `studio`, `api`.
+
+You can also control nav manually in **Site Settings → Main navigation**.
+
 ### Live updates (webhook)
 
 In Sanity → **API → Webhooks**, create a webhook:
@@ -91,8 +125,11 @@ Use the same secret as `SANITY_REVALIDATE_SECRET` in `.env.local` / hosting env.
 
 Singletons (one document each), editable in Studio:
 
-- `siteSettings` — brand name, emails, locations, footer/newsletter
-- `homePage` — hero, problem, pillars, involved CTA + images
-- `storyPage`, `farmsPage`, `cropsPage`, `impactPage`, `getInvolvedPage`
+- `siteSettings` — brand, emails, locations, nav links, footer/newsletter
+- `homePage`, `storyPage`, `farmsPage`, `cropsPage`, `impactPage`, `getInvolvedPage` — each supports **Extra / custom sections**
+
+Plus document type:
+
+- `page` — custom pages at `/[slug]` built entirely from sections
 
 Fallback copy lives in `src/content/site.ts` and `src/sanity/lib/fallbacks.ts` if Sanity is offline or unset.

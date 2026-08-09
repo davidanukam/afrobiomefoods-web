@@ -18,6 +18,7 @@ export const fallbackSiteSettings = {
   email: site.email,
   partnerEmail: site.partnerEmail,
   locations: site.locations,
+  navLinks: null as { label: string; href: string }[] | null,
   newsletterHeading: "Stay rooted",
   newsletterBody:
     "Harvest updates, volunteer days, and recipes that taste like home.",
@@ -49,6 +50,7 @@ export const fallbackHomePage = {
     "Volunteer in the soil, fund a family’s food box, or partner with us to expand food justice across Southwestern Ontario.",
   involvedImage: null,
   involvedImageUrl: images.involved,
+  sections: [] as import("@/components/SectionRenderer").CmsSection[],
 };
 
 export const fallbackStoryPage = {
@@ -79,6 +81,7 @@ export const fallbackStoryPage = {
     "Food banks and commercial groceries rarely stock the greens our communities cook with. By growing them locally, we close that gap with dignity: fresh, familiar, and affordable.",
   cultureImage: null,
   cultureImageUrl: images.crops,
+  sections: [] as import("@/components/SectionRenderer").CmsSection[],
 };
 
 export const fallbackFarmsPage = {
@@ -100,6 +103,7 @@ export const fallbackFarmsPage = {
     "Delicate specialty greens lose quality on long supply chains. By washing and packaging on Hamilton Road, we keep freshness high, reduce waste, and extend shelf life—without synthetic preservatives.",
   processingImage: null,
   processingImageUrl: images.crops,
+  sections: [] as import("@/components/SectionRenderer").CmsSection[],
 };
 
 export const fallbackCropsPage = {
@@ -113,14 +117,15 @@ export const fallbackCropsPage = {
   leafyHeadline: "The heart of our cultivation",
   leafyIntro:
     "Nutrient-dense building blocks of traditional African cooking—grown for flavour and culture, not long-haul shelf life.",
-  leafyGreens,
+  leafyGreens: leafyGreens.map((c) => ({ ...c, image: null, imageUrl: undefined as string | undefined })),
   vegEyebrow: "Vegetables & pods",
   vegHeadline: "Sun-loving crops from Pleasant Valley",
-  vegetables,
+  vegetables: vegetables.map((c) => ({ ...c, image: null, imageUrl: undefined as string | undefined })),
   qualityEyebrow: "Quality standards",
   qualityHeadline: "Chemical-free growing. Careful packing.",
   qualityBody:
     "We farm with an organic-first mentality—no synthetic preservatives on the plate. At Hamilton Road, greens are triple-washed and packaged to lock in moisture and traditional flavour from field to family table.",
+  sections: [] as import("@/components/SectionRenderer").CmsSection[],
 };
 
 export const fallbackImpactPage = {
@@ -145,6 +150,7 @@ export const fallbackImpactPage = {
   sroiBody:
     "Donations cultivate and distribute fresh African heritage vegetables directly to diaspora families—shortening food miles, boosting local agriculture, and preserving culinary legacy.",
   sroiCtaLabel: "Support our mission",
+  sections: [] as import("@/components/SectionRenderer").CmsSection[],
 };
 
 export const fallbackGetInvolvedPage = {
@@ -181,4 +187,5 @@ export const fallbackGetInvolvedPage = {
   newsletterBody:
     "Seasonal harvest updates, volunteer opportunities, and traditional recipes that taste like home.",
   newsletterCtaLabel: "Join our circle",
+  sections: [] as import("@/components/SectionRenderer").CmsSection[],
 };

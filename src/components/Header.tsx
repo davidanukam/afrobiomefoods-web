@@ -3,14 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { nav } from "@/content/site";
+
+type NavLink = { label: string; href: string };
 
 export function Header({
   transparent = false,
   brandName,
+  navLinks,
 }: {
   transparent?: boolean;
   brandName: string;
+  navLinks: NavLink[];
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -51,11 +54,11 @@ export function Header({
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
-          {nav.map((item) => {
+          {navLinks.map((item) => {
             const active = pathname === item.href;
             return (
               <Link
-                key={item.href}
+                key={`${item.href}-${item.label}`}
                 href={item.href}
                 className={`text-sm font-medium transition ${linkClass} ${
                   active ? (solid ? "text-leaf" : "text-white") : ""
@@ -98,9 +101,9 @@ export function Header({
           className="border-t border-leaf/10 bg-canvas section-pad py-4 lg:hidden"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-3">
-            {nav.map((item) => (
+            {navLinks.map((item) => (
               <Link
-                key={item.href}
+                key={`${item.href}-${item.label}`}
                 href={item.href}
                 className="py-1 text-base font-medium text-ink"
               >

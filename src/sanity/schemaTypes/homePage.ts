@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { pageSectionsField } from "./sections";
 
 const pillarFields = [
   defineField({ name: "title", type: "string", title: "Title" }),
@@ -38,6 +39,7 @@ export const homePage = defineType({
       type: "image",
       options: { hotspot: true },
     }),
+    pageSectionsField,
   ],
   preview: { prepare: () => ({ title: "Home Page" }) },
 });

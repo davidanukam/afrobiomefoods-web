@@ -1,10 +1,16 @@
 import Link from "next/link";
-import { nav } from "@/content/site";
 import { fallbackSiteSettings } from "@/sanity/lib/fallbacks";
 
 type SiteSettings = typeof fallbackSiteSettings;
+type NavLink = { label: string; href: string };
 
-export function Footer({ settings }: { settings: SiteSettings }) {
+export function Footer({
+  settings,
+  navLinks,
+}: {
+  settings: SiteSettings;
+  navLinks: NavLink[];
+}) {
   return (
     <footer className="border-t border-leaf/10 bg-leaf text-white">
       <div className="section-pad mx-auto grid max-w-7xl gap-12 py-16 md:grid-cols-[1.2fr_1fr_1fr]">
@@ -28,8 +34,8 @@ export function Footer({ settings }: { settings: SiteSettings }) {
             Explore
           </p>
           <ul className="mt-4 space-y-2.5">
-            {nav.map((item) => (
-              <li key={item.href}>
+            {navLinks.map((item) => (
+              <li key={`${item.href}-${item.label}`}>
                 <Link
                   href={item.href}
                   className="text-sm text-white/80 transition hover:text-white"

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 import { PageHero } from "@/components/PageHero";
+import { SectionRenderer } from "@/components/SectionRenderer";
 import { SiteShell } from "@/components/SiteShell";
 import { getFarmsPage } from "@/sanity/lib/load-query";
 
@@ -97,6 +98,8 @@ export default async function FarmsPage() {
           </FadeIn>
         </div>
       </section>
+
+      <SectionRenderer sections={page.sections} />
     </SiteShell>
   );
 }

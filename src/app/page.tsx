@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { CountUp } from "@/components/CountUp";
 import { FadeIn } from "@/components/FadeIn";
+import { SectionRenderer } from "@/components/SectionRenderer";
 import { SiteShell } from "@/components/SiteShell";
 import { getHomePage, getImpactPage, getCropsPage } from "@/sanity/lib/load-query";
 
@@ -180,6 +181,8 @@ export default async function HomePage() {
           </div>
         </FadeIn>
       </section>
+
+      <SectionRenderer sections={page.sections} />
     </SiteShell>
   );
 }

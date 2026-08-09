@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { pageSectionsField } from "./sections";
 
 export const impactPage = defineType({
   name: "impactPage",
@@ -34,6 +35,7 @@ export const impactPage = defineType({
     defineField({ name: "sroiHeadline", title: "SROI headline", type: "string" }),
     defineField({ name: "sroiBody", title: "SROI body", type: "text", rows: 3 }),
     defineField({ name: "sroiCtaLabel", title: "SROI CTA label", type: "string" }),
+    pageSectionsField,
   ],
   preview: { prepare: () => ({ title: "Community Impact" }) },
 });

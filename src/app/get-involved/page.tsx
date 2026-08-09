@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { FadeIn } from "@/components/FadeIn";
 import { PageHero } from "@/components/PageHero";
+import { SectionRenderer } from "@/components/SectionRenderer";
 import { SiteShell } from "@/components/SiteShell";
 import { getGetInvolvedPage, getSiteSettings } from "@/sanity/lib/load-query";
 
@@ -125,6 +126,8 @@ export default async function GetInvolvedPage() {
           </FadeIn>
         </div>
       </section>
+
+      <SectionRenderer sections={page.sections} />
     </SiteShell>
   );
 }

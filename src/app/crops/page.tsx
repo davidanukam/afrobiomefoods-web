@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 import { PageHero } from "@/components/PageHero";
+import { SectionRenderer } from "@/components/SectionRenderer";
 import { SiteShell } from "@/components/SiteShell";
 import { getCropsPage } from "@/sanity/lib/load-query";
 
@@ -13,13 +15,29 @@ export const metadata: Metadata = {
 function CropGrid({
   items,
 }: {
-  items: { name: string; aka: string; blurb: string }[];
+  items: {
+    name: string;
+    aka: string;
+    blurb: string;
+    imageUrl?: string;
+  }[];
 }) {
   return (
     <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2">
       {items.map((crop, i) => (
         <FadeIn key={crop.name} delay={i * 50}>
           <article className="border-t border-leaf/15 pt-6">
+            {crop.imageUrl ? (
+              <div className="relative mb-5 aspect-[4/3] overflow-hidden">
+                <Image
+                  src={crop.imageUrl}
+                  alt={crop.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            ) : null}
             <h3 className="font-display text-2xl font-semibold text-leaf">
               {crop.name}
             </h3>
@@ -90,6 +108,8 @@ export default async function CropsPage() {
           </p>
         </FadeIn>
       </section>
+
+      <SectionRenderer sections={page.sections} />
     </SiteShell>
   );
 }

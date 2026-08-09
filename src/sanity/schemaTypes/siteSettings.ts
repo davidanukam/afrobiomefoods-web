@@ -28,6 +28,29 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({
+      name: "navLinks",
+      title: "Main navigation",
+      description:
+        "Leave empty to use the default pages. Add links to include custom pages (e.g. /recipes). Custom pages with “Show in main navigation” are also merged in automatically.",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "label", type: "string", title: "Label", validation: (r) => r.required() }),
+            defineField({
+              name: "href",
+              type: "string",
+              title: "URL path",
+              description: "Example: /crops or /recipes",
+              validation: (r) => r.required(),
+            }),
+          ],
+          preview: { select: { title: "label", subtitle: "href" } },
+        },
+      ],
+    }),
+    defineField({
       name: "newsletterHeading",
       title: "Newsletter heading",
       type: "string",

@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { pageSectionsField } from "./sections";
 
 export const storyPage = defineType({
   name: "storyPage",
@@ -37,6 +38,7 @@ export const storyPage = defineType({
     defineField({ name: "cultureHeadline", title: "Culture band headline", type: "string" }),
     defineField({ name: "cultureBody", title: "Culture band body", type: "text", rows: 3 }),
     defineField({ name: "cultureImage", title: "Culture band image", type: "image", options: { hotspot: true } }),
+    pageSectionsField,
   ],
   preview: { prepare: () => ({ title: "Our Story" }) },
 });
