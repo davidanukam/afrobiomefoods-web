@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 import { PageHero } from "@/components/PageHero";
 import { SiteShell } from "@/components/SiteShell";
-import { farms, images } from "@/content/site";
+import { getFarmsPage } from "@/sanity/lib/load-query";
 
 export const metadata: Metadata = {
   title: "Farms & Facilities",
@@ -11,33 +11,31 @@ export const metadata: Metadata = {
     "From Clarke Road and Pleasant Valley to our Hamilton Road hub—AfroBiome’s local food pipeline from field to table.",
 };
 
-export default function FarmsPage() {
+export default async function FarmsPage() {
+  const page = await getFarmsPage();
+
   return (
     <SiteShell>
       <PageHero
-        eyebrow="Farms & Facilities"
-        title="From Our Fields to Your Table"
-        subtitle="A local food pipeline spanning rural fields and an urban processing hub—every leaf handled with care."
-        image={farms[0].image}
+        eyebrow={page.eyebrow}
+        title={page.title}
+        subtitle={page.subtitle}
+        image={page.heroImageUrl}
       />
 
       <section className="section-pad mx-auto max-w-3xl py-16 sm:py-20">
         <FadeIn>
-          <p className="text-lg leading-relaxed text-ink/80">
-            By managing every step of the journey, we ensure that every leaf,
-            pod, and vegetable is handled with respect and hygiene—from rich
-            rural soils to a dedicated London processing hub.
-          </p>
+          <p className="text-lg leading-relaxed text-ink/80">{page.intro}</p>
         </FadeIn>
       </section>
 
       <div className="space-y-0">
-        {farms.map((farm, index) => {
+        {(page.farms || []).map((farm, index) => {
           const reverse = index % 2 === 1;
           return (
             <section
-              key={farm.slug}
-              id={farm.slug}
+              key={farm.slug || farm.name}
+              id={farm.slug || undefined}
               className={index % 2 === 0 ? "bg-canvas" : "bg-canvas-deep"}
             >
               <div
@@ -48,7 +46,7 @@ export default function FarmsPage() {
                 <FadeIn>
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
-                      src={farm.image}
+                      src={farm.imageUrl}
                       alt={farm.name}
                       fill
                       className="object-cover"
@@ -82,17 +80,14 @@ export default function FarmsPage() {
         <div className="section-pad mx-auto max-w-3xl text-center">
           <FadeIn>
             <h2 className="font-display text-3xl font-semibold">
-              Why local processing matters
+              {page.processingHeadline}
             </h2>
             <p className="mt-5 text-base leading-relaxed text-white/80">
-              Delicate specialty greens lose quality on long supply chains. By
-              washing and packaging on Hamilton Road, we keep freshness high,
-              reduce waste, and extend shelf life—without synthetic
-              preservatives.
+              {page.processingBody}
             </p>
             <div className="relative mx-auto mt-10 aspect-[21/9] max-w-4xl overflow-hidden">
               <Image
-                src={images.crops}
+                src={page.processingImageUrl}
                 alt="Fresh produce ready for packing"
                 fill
                 className="object-cover"

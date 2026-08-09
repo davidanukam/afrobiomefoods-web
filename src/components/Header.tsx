@@ -3,9 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { nav, site } from "@/content/site";
+import { nav } from "@/content/site";
 
-export function Header({ transparent = false }: { transparent?: boolean }) {
+export function Header({
+  transparent = false,
+  brandName,
+}: {
+  transparent?: boolean;
+  brandName: string;
+}) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +47,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
             solid ? "text-leaf" : "text-white"
           }`}
         >
-          {site.name}
+          {brandName}
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

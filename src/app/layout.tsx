@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Figtree, Fraunces } from "next/font/google";
-import { Footer } from "@/components/Footer";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -29,10 +28,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${fraunces.variable} ${figtree.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col font-sans text-ink">
+      <body
+        className="flex min-h-full flex-col font-sans text-ink"
+        suppressHydrationWarning
+      >
         {children}
-        <Footer />
       </body>
     </html>
   );

@@ -3,7 +3,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { FadeIn } from "@/components/FadeIn";
 import { PageHero } from "@/components/PageHero";
 import { SiteShell } from "@/components/SiteShell";
-import { donationTiers, images, site } from "@/content/site";
+import { getGetInvolvedPage, getSiteSettings } from "@/sanity/lib/load-query";
 
 export const metadata: Metadata = {
   title: "Get Involved",
@@ -11,14 +11,19 @@ export const metadata: Metadata = {
     "Volunteer at Clarke Road or Pleasant Valley, donate to food boxes and farm tools, or partner with AfroBiome Foods.",
 };
 
-export default function GetInvolvedPage() {
+export default async function GetInvolvedPage() {
+  const [page, settings] = await Promise.all([
+    getGetInvolvedPage(),
+    getSiteSettings(),
+  ]);
+
   return (
     <SiteShell>
       <PageHero
-        eyebrow="Get Involved"
-        title="Grow with us"
-        subtitle="Whether you want to get your hands dirty, fund a family’s food supply, or partner for food justice—there is a place for you."
-        image={images.involved}
+        eyebrow={page.eyebrow}
+        title={page.title}
+        subtitle={page.subtitle}
+        image={page.heroImageUrl}
       />
 
       <section className="section-pad mx-auto max-w-7xl py-20 sm:py-24">
@@ -28,23 +33,21 @@ export default function GetInvolvedPage() {
               01
             </p>
             <h2 className="font-display mt-3 text-2xl font-semibold text-leaf sm:text-3xl">
-              Volunteer
+              {page.volunteerTitle}
             </h2>
             <p className="mt-4 text-base leading-relaxed text-ink/75">
-              Get your hands dirty at Clarke Road (London) or Pleasant Valley
-              (Aylmer)—planting, weeding, harvesting—or help sort and pack at
-              Hamilton Road. No farming experience required.
+              {page.volunteerBody}
             </p>
             <ul className="mt-5 space-y-2 text-sm text-ink/70">
-              <li>· On the farms: seasonal planting & harvest</li>
-              <li>· At the hub: wash, sort & pack food boxes</li>
-              <li>· In community: deliveries & learning circles</li>
+              {(page.volunteerBullets || []).map((item) => (
+                <li key={item}>· {item.replace(/^·\s*/, "")}</li>
+              ))}
             </ul>
             <a
-              href={`mailto:${site.email}?subject=Volunteer%20with%20AfroBiome`}
+              href={`mailto:${settings.email}?subject=Volunteer%20with%20AfroBiome`}
               className="mt-6 inline-flex text-sm font-semibold text-leaf-mid underline-offset-4 hover:underline"
             >
-              Apply to volunteer →
+              {page.volunteerCtaLabel}
             </a>
           </FadeIn>
 
@@ -56,14 +59,13 @@ export default function GetInvolvedPage() {
               id="donate"
               className="font-display mt-3 scroll-mt-28 text-2xl font-semibold text-leaf sm:text-3xl"
             >
-              Donate
+              {page.donateTitle}
             </h2>
             <p className="mt-4 text-base leading-relaxed text-ink/75">
-              Every dollar fuels food sovereignty—seeds, tools, greenhouse heat,
-              and subsidized boxes for households who need them most.
+              {page.donateBody}
             </p>
             <ul className="mt-6 space-y-4">
-              {donationTiers.map((tier) => (
+              {(page.donationTiers || []).map((tier) => (
                 <li key={tier.amount} className="border-t border-leaf/15 pt-4">
                   <p className="font-display text-xl font-semibold text-leaf">
                     {tier.amount}
@@ -76,9 +78,9 @@ export default function GetInvolvedPage() {
             </ul>
             <div className="mt-8">
               <ButtonLink
-                href={`mailto:${site.email}?subject=Donation%20to%20AfroBiome`}
+                href={`mailto:${settings.email}?subject=Donation%20to%20AfroBiome`}
               >
-                Donate securely
+                {page.donateCtaLabel}
               </ButtonLink>
             </div>
           </FadeIn>
@@ -88,23 +90,21 @@ export default function GetInvolvedPage() {
               03
             </p>
             <h2 className="font-display mt-3 text-2xl font-semibold text-leaf sm:text-3xl">
-              Partner
+              {page.partnerTitle}
             </h2>
             <p className="mt-4 text-base leading-relaxed text-ink/75">
-              Collaborate with municipal programs, food banks, housing
-              providers, corporate sponsors, and research partners to strengthen
-              inclusive food systems in London and beyond.
+              {page.partnerBody}
             </p>
             <ul className="mt-5 space-y-2 text-sm text-ink/70">
-              <li>· Supply culturally specific greens to pantries</li>
-              <li>· Sponsor a harvest field or delivery route</li>
-              <li>· Corporate volunteer days at Clarke Road</li>
+              {(page.partnerBullets || []).map((item) => (
+                <li key={item}>· {item.replace(/^·\s*/, "")}</li>
+              ))}
             </ul>
             <a
-              href={`mailto:${site.partnerEmail}?subject=Partnership%20Inquiry`}
+              href={`mailto:${settings.partnerEmail}?subject=Partnership%20Inquiry`}
               className="mt-6 inline-flex text-sm font-semibold text-leaf-mid underline-offset-4 hover:underline"
             >
-              Inquire about partnering →
+              {page.partnerCtaLabel}
             </a>
           </FadeIn>
         </div>
@@ -114,15 +114,12 @@ export default function GetInvolvedPage() {
         <div className="section-pad mx-auto max-w-3xl text-center">
           <FadeIn>
             <h2 className="font-display text-3xl font-semibold">
-              Stay rooted in the community
+              {page.newsletterHeadline}
             </h2>
-            <p className="mt-4 text-base text-white/80">
-              Seasonal harvest updates, volunteer opportunities, and traditional
-              recipes that taste like home.
-            </p>
+            <p className="mt-4 text-base text-white/80">{page.newsletterBody}</p>
             <div className="mt-8">
-              <ButtonLink href={`mailto:${site.email}`} variant="light">
-                Join our circle
+              <ButtonLink href={`mailto:${settings.email}`} variant="light">
+                {page.newsletterCtaLabel}
               </ButtonLink>
             </div>
           </FadeIn>

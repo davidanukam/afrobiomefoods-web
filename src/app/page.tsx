@@ -4,20 +4,22 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { CountUp } from "@/components/CountUp";
 import { FadeIn } from "@/components/FadeIn";
 import { SiteShell } from "@/components/SiteShell";
-import {
-  images,
-  impactMetrics,
-  leafyGreens,
-  pillars,
-  site,
-} from "@/content/site";
+import { getHomePage, getImpactPage, getCropsPage } from "@/sanity/lib/load-query";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [page, impact, crops] = await Promise.all([
+    getHomePage(),
+    getImpactPage(),
+    getCropsPage(),
+  ]);
+  const cropTeasers = (crops.leafyGreens || []).slice(0, 6);
+  const metrics = impact.metrics || [];
+
   return (
     <SiteShell transparentHeader>
       <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-leaf">
         <Image
-          src={images.hero}
+          src={page.heroImageUrl}
           alt="Community members packing fresh produce together"
           fill
           priority
@@ -27,20 +29,20 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-leaf via-leaf/50 to-black/25" />
         <div className="section-pad relative z-10 mx-auto w-full max-w-7xl pb-16 pt-32 sm:pb-20">
           <p className="font-display text-2xl font-semibold text-white sm:text-3xl">
-            {site.name}
+            {page.heroBrand}
           </p>
           <h1 className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-            {site.tagline}
+            {page.heroHeadline}
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
-            {site.subhead}
+            {page.heroSubhead}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href="/get-involved#donate" variant="light">
-              Support Our Mission
+              {page.heroCtaLabel}
             </ButtonLink>
             <ButtonLink href="/story" variant="secondary">
-              Our Story
+              {page.heroSecondaryCtaLabel}
             </ButtonLink>
           </div>
         </div>
@@ -49,24 +51,20 @@ export default function HomePage() {
       <section className="section-pad mx-auto max-w-7xl py-20 sm:py-28">
         <FadeIn>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-earth">
-            The gap we close
+            {page.problemEyebrow}
           </p>
           <h2 className="font-display mt-3 max-w-3xl text-3xl font-semibold text-leaf sm:text-4xl">
-            Fresh African vegetables, grown here—not shipped wilted from afar.
+            {page.problemHeadline}
           </h2>
           <p className="prose-afro mt-6 text-lg leading-relaxed text-ink/80">
-            Traditional grocery stores in Canada often lack fresh, high-quality,
-            affordable African vegetables like Ugu, Amaranth, Jute Mallow, and
-            Garden Eggs. AfroBiome Foods bridges that gap from seed to plate as
-            a nonprofit initiative—cultivating heritage crops in Ontario soil
-            for diaspora communities who deserve food that tastes like home.
+            {page.problemBody}
           </p>
         </FadeIn>
       </section>
 
       <section className="bg-canvas-deep">
         <div className="section-pad mx-auto grid max-w-7xl gap-12 py-20 sm:py-24 md:grid-cols-3 md:gap-10">
-          {pillars.map((pillar, i) => (
+          {(page.pillars || []).map((pillar, i) => (
             <FadeIn key={pillar.title} delay={i * 100}>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-earth">
                 0{i + 1}
@@ -87,10 +85,10 @@ export default function HomePage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-earth">
-                Heritage crops
+                {page.cropsEyebrow}
               </p>
               <h2 className="font-display mt-3 text-3xl font-semibold text-leaf sm:text-4xl">
-                Greens that connect us
+                {page.cropsHeadline}
               </h2>
             </div>
             <Link
@@ -102,7 +100,7 @@ export default function HomePage() {
           </div>
         </FadeIn>
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {leafyGreens.slice(0, 6).map((crop, i) => (
+          {cropTeasers.map((crop, i) => (
             <FadeIn key={crop.name} delay={i * 60}>
               <article className="border-t border-leaf/15 pt-5">
                 <h3 className="font-display text-xl font-semibold text-leaf">
@@ -124,17 +122,17 @@ export default function HomePage() {
         <div className="section-pad relative z-10 mx-auto max-w-7xl">
           <FadeIn>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
-              Community impact
+              {page.impactEyebrow}
             </p>
             <h2 className="font-display mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
-              Grown for families. Shared with purpose.
+              {page.impactHeadline}
             </h2>
           </FadeIn>
           <div className="mt-14 grid gap-10 md:grid-cols-3">
-            {impactMetrics.map((metric, i) => (
+            {metrics.map((metric, i) => (
               <FadeIn key={metric.label} delay={i * 100}>
                 <p className="font-display text-5xl font-semibold tracking-tight sm:text-6xl">
-                  <CountUp value={metric.value} suffix={metric.suffix} />
+                  <CountUp value={metric.value} suffix={metric.suffix || ""} />
                 </p>
                 <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-white/70">
                   {metric.label}
@@ -155,14 +153,13 @@ export default function HomePage() {
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-earth">
-                Get involved
+                {page.involvedEyebrow}
               </p>
               <h2 className="font-display mt-3 text-3xl font-semibold text-leaf sm:text-4xl">
-                There is a place for you in our circle.
+                {page.involvedHeadline}
               </h2>
               <p className="mt-5 max-w-lg text-base leading-relaxed text-ink/75">
-                Volunteer in the soil, fund a family’s food box, or partner with
-                us to expand food justice across Southwestern Ontario.
+                {page.involvedBody}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <ButtonLink href="/get-involved">Get Involved</ButtonLink>
@@ -173,7 +170,7 @@ export default function HomePage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
               <Image
-                src={images.involved}
+                src={page.involvedImageUrl}
                 alt="Volunteers working together outdoors"
                 fill
                 className="object-cover"
