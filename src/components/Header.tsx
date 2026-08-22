@@ -50,7 +50,7 @@ export function Header({
             }`}
         >
           <Image
-            src="/AfroBiomeFoodsLogo.png"
+            src="/icon.png"
             alt="AfroBiome Foods Logo"
             width={32}
             height={32}
