@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -45,10 +46,17 @@ export function Header({
       <div className="section-pad mx-auto flex max-w-7xl items-center justify-between gap-4 py-3.5">
         <Link
           href="/"
-          className={`font-display text-xl font-semibold hover:scale-105 transition duration-300 tracking-tight sm:text-2xl ${solid ? "text-leaf" : "text-leaf" // solid ? "text-leaf" : "text-white"
+          className={`font-display inline-flex gap-2.5 text-xl font-semibold hover:scale-105 transition duration-300 tracking-tight sm:text-2xl ${solid ? "text-leaf" : "text-leaf" // solid ? "text-leaf" : "text-white"
             }`}
         >
-          {brandName}
+          <Image
+            src="/AfroBiomeFoodsLogo.png"
+            alt="AfroBiome Foods Logo"
+            width={32}
+            height={32}
+            className="h-8 w-auto object-contain rounded-sm"
+          />
+          <span>{brandName}</span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
