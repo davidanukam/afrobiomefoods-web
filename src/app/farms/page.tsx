@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 import { PageHero } from "@/components/PageHero";
@@ -27,6 +28,22 @@ export default async function FarmsPage() {
       <section className="section-pad mx-auto max-w-3xl py-16 sm:py-20">
         <FadeIn>
           <p className="text-lg leading-relaxed text-ink/80">{page.intro}</p>
+          <Link
+          href="https://www.youtube.com/@AfroBiomeFoods"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`text-red-500 mt-5 font-display inline-flex gap-2.5 text-xl font-semibold hover:underline transition duration-300 tracking-tight sm:text-2xl
+            }`}
+        >
+          <Image
+            src="/YouTubeLogo.png"
+            alt="AfroBiome Foods Logo"
+            width={32}
+            height={32}
+            className="h-8 w-auto object-contain rounded-sm"
+          />
+          <span>Watch our farm videos</span>
+        </Link>
         </FadeIn>
       </section>
 
