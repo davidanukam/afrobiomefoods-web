@@ -33,22 +33,20 @@ export function Header({
   const solid = !transparent || scrolled || open;
   const linkClass = solid
     ? "text-ink/75 hover:text-leaf"
-    : "text-white/85 hover:text-white";
+    : "text-ink/85 hover:text-leaf"; // "text-white/85 hover:text-white"
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        solid
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${solid
           ? "border-b border-leaf/10 bg-canvas/95 backdrop-blur-md"
-          : "bg-transparent"
-      }`}
+          : "border-b border-leaf/10 bg-canvas/95 backdrop-blur-md" // "bg-transparent"
+        }`}
     >
       <div className="section-pad mx-auto flex max-w-7xl items-center justify-between gap-4 py-3.5">
         <Link
           href="/"
-          className={`font-display text-xl font-semibold tracking-tight sm:text-2xl ${
-            solid ? "text-leaf" : "text-white"
-          }`}
+          className={`font-display text-xl font-semibold hover:scale-105 transition duration-300 tracking-tight sm:text-2xl ${solid ? "text-leaf" : "text-leaf" // solid ? "text-leaf" : "text-white"
+            }`}
         >
           {brandName}
         </Link>
@@ -60,21 +58,23 @@ export function Header({
               <Link
                 key={`${item.href}-${item.label}`}
                 href={item.href}
-                className={`text-sm font-medium transition ${linkClass} ${
-                  active ? (solid ? "text-leaf" : "text-white") : ""
-                }`}
+                className={`group relative text-sm font-medium transition-colors duration-200 ${linkClass} ${active ? (solid ? "text-leaf" : "text-white") : ""
+                  }`}
               >
                 {item.label}
+                <span
+                  className={`absolute inset-x-0 -bottom-1 h-0.5 origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 ${active ? "scale-x-100" : ""
+                    } ${solid ? "bg-leaf" : "bg-leaf"}`} // ${solid ? "bg-leaf" : "bg-white"}
+                />
               </Link>
             );
           })}
           <Link
             href="/get-involved#donate"
-            className={`rounded-md px-4 py-2 text-sm font-semibold transition ${
-              solid
+            className={`rounded-md px-4 py-2 text-sm font-semibold hover:scale-105 transition ${solid
                 ? "bg-leaf text-white hover:bg-leaf-mid"
-                : "bg-white text-leaf hover:bg-fog"
-            }`}
+                : "bg-leaf text-white hover:bg-leaf-mid" // "bg-white text-leaf hover:bg-fog"
+              }`}
           >
             Donate
           </Link>
@@ -82,11 +82,10 @@ export function Header({
 
         <button
           type="button"
-          className={`inline-flex items-center justify-center rounded-md border px-3 py-2 text-sm font-semibold lg:hidden ${
-            solid
+          className={`inline-flex items-center justify-center rounded-md border px-3 py-2 text-sm font-semibold lg:hidden ${solid
               ? "border-leaf/20 text-leaf"
-              : "border-white/40 text-white"
-          }`}
+              : "border-leaf/20 text-leaf" //  "border-white/40 text-white"
+            }`}
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}

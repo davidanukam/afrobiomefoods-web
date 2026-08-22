@@ -18,7 +18,7 @@ export default async function HomePage() {
 
   return (
     <SiteShell transparentHeader>
-      <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-leaf">
+      <section className="relative isolate flex min-h-svh items-end overflow-hidden bg-leaf">
         <Image
           src={page.heroImageUrl}
           alt="Community members packing fresh produce together"
@@ -27,22 +27,24 @@ export default async function HomePage() {
           className="object-cover hero-ken-burns"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-leaf via-leaf/50 to-black/25" />
+
+        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/60 to-black/30 lg:bg-linear-to-r lg:from-black/90 lg:via-black/70 lg:to-transparent" />
+
         <div className="section-pad relative z-10 mx-auto w-full max-w-7xl pb-16 pt-32 sm:pb-20">
-          <p className="font-display text-2xl font-semibold text-white sm:text-3xl">
+          <p className="font-display text-2xl font-semibold text-emerald-400 sm:text-3xl">
             {page.heroBrand}
           </p>
-          <h1 className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl drop-shadow-md">
             {page.heroHeadline}
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg">
             {page.heroSubhead}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="/get-involved#donate" variant="light">
+            <ButtonLink href="/get-involved#donate" variant="light" className="hover:scale-105">
               {page.heroCtaLabel}
             </ButtonLink>
-            <ButtonLink href="/story" variant="secondary">
+            <ButtonLink href="/story" variant="secondary" className="hover:scale-105">
               {page.heroSecondaryCtaLabel}
             </ButtonLink>
           </div>
@@ -142,7 +144,7 @@ export default async function HomePage() {
             ))}
           </div>
           <FadeIn className="mt-12">
-            <ButtonLink href="/impact" variant="light">
+            <ButtonLink href="/impact" variant="light" className="hover:scale-105">
               See our impact
             </ButtonLink>
           </FadeIn>
@@ -163,13 +165,13 @@ export default async function HomePage() {
                 {page.involvedBody}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <ButtonLink href="/get-involved">Get Involved</ButtonLink>
-                <ButtonLink href="/get-involved#donate" variant="outline">
+                <ButtonLink href="/get-involved" className="hover:scale-105">Get Involved</ButtonLink>
+                <ButtonLink href="/get-involved#donate" variant="outline" className="hover:scale-105">
                   Donate
                 </ButtonLink>
               </div>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+            <div className="relative aspect-4/3 overflow-hidden rounded-sm">
               <Image
                 src={page.involvedImageUrl}
                 alt="Volunteers working together outdoors"

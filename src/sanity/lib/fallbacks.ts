@@ -47,7 +47,7 @@ export const fallbackHomePage = {
   involvedEyebrow: "Get involved",
   involvedHeadline: "There is a place for you in our circle.",
   involvedBody:
-    "Volunteer in the soil, fund a family’s food box, or partner with us to expand food justice across Southwestern Ontario.",
+    "Volunteer in the soil, fund a family's food box, or partner with us to expand food justice across Southwestern Ontario.",
   involvedImage: null,
   involvedImageUrl: images.involved,
   sections: [] as import("@/components/SectionRenderer").CmsSection[],
@@ -61,7 +61,7 @@ export const fallbackStoryPage = {
   heroImage: null,
   heroImageUrl: images.story,
   intro: [
-    "For the vibrant African and Black diaspora communities in Southwestern Ontario, accessing fresh, high-quality, culturally relevant vegetables hasn’t always been easy. Too often, traditional greens like Efo Shoko, Ewedu, and Gboma arrive thousands of miles away—wilted, heavily preserved, or priced out of reach.",
+    "For the vibrant African and Black diaspora communities in Southwestern Ontario, accessing fresh, high-quality, culturally relevant vegetables hasn't always been easy. Too often, traditional greens like Efo Shoko, Ewedu, and Gboma arrive thousands of miles away—wilted, heavily preserved, or priced out of reach.",
     "At AfroBiome Foods Incorporated, we decided it was time to change that story. We are a nonprofit reclaiming food sovereignty by cultivating African-based, culturally significant vegetables right here in Ontario soil—from seed to harvest, processing to distribution.",
   ],
   missionEyebrow: "Mission",
@@ -100,7 +100,7 @@ export const fallbackFarmsPage = {
   })),
   processingHeadline: "Why local processing matters",
   processingBody:
-    "Delicate specialty greens lose quality on long supply chains. By washing and packaging on Hamilton Road, we keep freshness high, reduce waste, and extend shelf life—without synthetic preservatives.",
+    "Delicate specialty greens lose quality on long supply chains. By washing and packaging on Hamilton Road, we keep freshness high, reduce waste, and extend shelf life without synthetic preservatives.",
   processingImage: null,
   processingImageUrl: images.crops,
   sections: [] as import("@/components/SectionRenderer").CmsSection[],
@@ -157,7 +157,7 @@ export const fallbackGetInvolvedPage = {
   eyebrow: "Get Involved",
   title: "Grow with us",
   subtitle:
-    "Whether you want to get your hands dirty, fund a family’s food supply, or partner for food justice—there is a place for you.",
+    "Whether you want to get your hands dirty, fund a family's food supply, or partner for food justice—there is a place for you.",
   heroImage: null,
   heroImageUrl: images.involved,
   volunteerTitle: "Volunteer",

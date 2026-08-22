@@ -45,7 +45,7 @@ export default async function FarmsPage() {
                 }`}
               >
                 <FadeIn>
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-4/3 overflow-hidden">
                     <Image
                       src={farm.imageUrl}
                       alt={farm.name}
@@ -86,7 +86,7 @@ export default async function FarmsPage() {
             <p className="mt-5 text-base leading-relaxed text-white/80">
               {page.processingBody}
             </p>
-            <div className="relative mx-auto mt-10 aspect-[21/9] max-w-4xl overflow-hidden">
+            <div className="relative mx-auto mt-10 aspect-21/9 max-w-4xl overflow-hidden rounded-xl shadow-xl hover:scale-105 transition duration-300">
               <Image
                 src={page.processingImageUrl}
                 alt="Fresh produce ready for packing"
