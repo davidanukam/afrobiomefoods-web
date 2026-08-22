@@ -25,7 +25,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center rounded-md px-5 py-2.5 text-[0.95rem] font-semibold tracking-wide transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${variants[variant]} ${className}`}
+      className={`inline-flex items-center justify-center rounded-md px-5 py-2.5 text-[0.95rem] font-semibold tracking-wide transition duration-300 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${variants[variant]} ${className}`}
     >
       {children}
     </Link>

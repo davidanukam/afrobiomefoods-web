@@ -18,7 +18,7 @@ export function PageHero({
         alt=""
         fill
         priority
-        className="object-cover hero-ken-burns"
+        className="object-cover"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-leaf via-leaf/55 to-leaf/25" />

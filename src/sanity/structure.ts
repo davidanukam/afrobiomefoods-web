@@ -8,6 +8,7 @@ const SINGLETONS = [
   { id: "cropsPage", title: "Our Crops" },
   { id: "impactPage", title: "Community Impact" },
   { id: "getInvolvedPage", title: "Get Involved" },
+  { id: "directorsPage", title: "Directors" },
 ] as const;
 
 export const structure: StructureResolver = (S) =>

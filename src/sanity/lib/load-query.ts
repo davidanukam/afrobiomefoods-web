@@ -5,6 +5,7 @@ import { isSanityConfigured } from "../env";
 import { nav as defaultNav } from "@/content/site";
 import {
   fallbackCropsPage,
+  fallbackDirectorsPage,
   fallbackFarmsPage,
   fallbackGetInvolvedPage,
   fallbackHomePage,
@@ -16,6 +17,7 @@ import {
   cropsPageQuery,
   customPageBySlugQuery,
   customPageSlugsQuery,
+  directorsPageQuery,
   farmsPageQuery,
   getInvolvedPageQuery,
   homePageQuery,
@@ -31,6 +33,7 @@ const RESERVED_SLUGS = new Set([
   "crops",
   "impact",
   "get-involved",
+  "directors",
   "studio",
   "api",
 ]);
@@ -216,6 +219,36 @@ export async function getGetInvolvedPage() {
     donationTiers: data.donationTiers?.length
       ? data.donationTiers
       : fallbackGetInvolvedPage.donationTiers,
+    sections: (data.sections || []) as CmsSection[],
+  };
+}
+
+export async function getDirectorsPage() {
+  const data = await fetchOrFallback(directorsPageQuery, fallbackDirectorsPage);
+  const fallbackPeople = fallbackDirectorsPage.people;
+  const people = (data.people?.length ? data.people : fallbackPeople).map(
+    (person, i) => {
+      const fallback = fallbackPeople[i];
+      return {
+        ...fallback,
+        ...person,
+        emails: person.emails?.length ? person.emails : fallback?.emails || [],
+        photoUrl: resolveImageUrl(
+          person.photo,
+          person.photoUrl || fallback?.photoUrl,
+          1200,
+        ),
+      };
+    },
+  );
+
+  return {
+    ...data,
+    people,
+    heroImageUrl: resolveImageUrl(
+      data.heroImage,
+      data.heroImageUrl || fallbackDirectorsPage.heroImageUrl,
+    ),
     sections: (data.sections || []) as CmsSection[],
   };
 }
