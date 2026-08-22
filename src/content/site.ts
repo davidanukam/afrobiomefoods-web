@@ -32,6 +32,7 @@ export const nav = [
   { href: "/crops", label: "Our Crops" },
   { href: "/impact", label: "Impact" },
   { href: "/get-involved", label: "Get Involved" },
+  { href: "/directors", label: "Directors" },
 ];
 
 export const pillars = [
@@ -60,7 +61,7 @@ export const storyPillars = [
   },
   {
     title: "Community Care & Health",
-    body: "Local growing means nutrient-dense produce without heavy chemical preservatives—food that nourishes body and culture.",
+    body: "Local growing means nutrient-dense produce without heavy chemical preservatives, food that nourishes body and culture.",
   },
 ];
 
@@ -82,7 +83,7 @@ export const farms = [
     city: "Aylmer, ON",
     vibe: "Our sprawling, high-yield agricultural heartland.",
     grows:
-      "Garden Eggs (Igbagba), okra, African hot peppers, and sun-loving specialty crops—open field and high-tunnel.",
+      "Garden Eggs (Igbagba), okra, African hot peppers, and sun-loving specialty crops in open field and high-tunnel.",
     note: "Extends the Canadian season so warm-weather African crops thrive.",
     image:
       "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80",
@@ -93,7 +94,7 @@ export const farms = [
     city: "London, ON",
     vibe: "Post-harvest care that protects delicate specialty greens.",
     grows:
-      "Triple-washed sorting, eco-friendly packaging, and cold storage—no synthetic preservatives.",
+      "Triple-washed sorting, eco-friendly packaging, and cold storage, with no synthetic preservatives.",
     note: "Optimal freshness, less waste, longer shelf life for greens that taste like home.",
     image:
       "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1600&q=80",
@@ -105,7 +106,7 @@ export const leafyGreens = [
     name: "Amaranth",
     aka: "African Spinach / Efo Shoko & Tete",
     blurb:
-      "Quick-growing, nutrient-dense green with a mild earthy flavour—central to many West African stews.",
+      "Quick-growing, nutrient-dense green with a mild earthy flavour, central to many West African stews.",
   },
   {
     name: "Ugu",
@@ -117,7 +118,7 @@ export const leafyGreens = [
     name: "Ewedu",
     aka: "Jute Leaves",
     blurb:
-      "Highly sought-after for traditional soups—delicate leaves handled carefully from field to hub.",
+      "Highly sought-after for traditional soups. Delicate leaves are handled carefully from field to hub.",
   },
   {
     name: "Gboma",
@@ -129,13 +130,13 @@ export const leafyGreens = [
     name: "Bitterleaf",
     aka: "Ewuro",
     blurb:
-      "Distinctive bitter profile essential to classic dishes—fresh, local, and free of heavy preservatives.",
+      "Distinctive bitter profile essential to classic dishes: fresh, local, and free of heavy preservatives.",
   },
   {
     name: "Huckleberry",
     aka: "Jama Jama",
     blurb:
-      "Beloved leafy green for sautéed sides and soups—culturally familiar and hard to find fresh in Canadian grocery aisles.",
+      "Beloved leafy green for sautéed sides and soups. It is culturally familiar and hard to find fresh in Canadian grocery aisles.",
   },
 ];
 
@@ -156,7 +157,7 @@ export const vegetables = [
     name: "African Hot Peppers",
     aka: "Heritage heat",
     blurb:
-      "Peppers that bring authentic heat and aroma to diaspora cooking—grown with care, not compromise.",
+      "Peppers that bring authentic heat and aroma to diaspora cooking, grown with care, not compromise.",
   },
   {
     name: "African Corn",

@@ -44,15 +44,6 @@ body {
   color: var(--ink);
 }
 
-@keyframes ken-burns {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.06);
-  }
-}
-
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -62,10 +53,6 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.hero-ken-burns {
-  animation: ken-burns 18s ease-out forwards;
 }
 
 .fade-up {

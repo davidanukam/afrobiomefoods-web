@@ -5,7 +5,7 @@
  */
 
 console.log(`
-AfroBiome Foods — Sanity setup
+AfroBiome Foods - Sanity setup
 ==============================
 
 1) Create / log in to a Sanity project

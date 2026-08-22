@@ -24,7 +24,7 @@ export default async function HomePage() {
           alt="Community members packing fresh produce together"
           fill
           priority
-          className="object-cover hero-ken-burns"
+          className="object-cover"
           sizes="100vw"
         />
 
@@ -176,7 +176,7 @@ export default async function HomePage() {
                 src={page.involvedImageUrl}
                 alt="Volunteers working together outdoors"
                 fill
-                className="object-cover"
+                className="object-cover transition duration-300 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
             </div>

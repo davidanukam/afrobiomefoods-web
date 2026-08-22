@@ -87,7 +87,7 @@ export function Footer({
             />
             <button
               type="submit"
-              className="cursor-pointer rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-leaf transition hover:bg-fog hover:scale-105"
+              className="cursor-pointer rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-leaf transition duration-300 hover:bg-fog hover:scale-105"
             >
               Join Our Circle
             </button>

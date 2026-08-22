@@ -90,7 +90,7 @@ export function Header({
 
         <button
           type="button"
-          className={`inline-flex items-center justify-center rounded-md border px-3 py-2 text-sm font-semibold lg:hidden ${solid
+          className={`inline-flex items-center justify-center rounded-md border px-3 py-2 text-sm font-semibold transition duration-300 hover:scale-105 lg:hidden ${solid
               ? "border-leaf/20 text-leaf"
               : "border-leaf/20 text-leaf" //  "border-white/40 text-white"
             }`}
@@ -119,7 +119,7 @@ export function Header({
             ))}
             <Link
               href="/get-involved#donate"
-              className="mt-2 inline-flex w-fit rounded-md bg-leaf px-4 py-2 text-sm font-semibold text-white"
+              className="mt-2 inline-flex w-fit rounded-md bg-leaf px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:scale-105"
             >
               Donate
             </Link>

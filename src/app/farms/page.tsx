@@ -9,7 +9,7 @@ import { getFarmsPage } from "@/sanity/lib/load-query";
 export const metadata: Metadata = {
   title: "Farms & Facilities",
   description:
-    "From Clarke Road and Pleasant Valley to our Hamilton Road hub—AfroBiome’s local food pipeline from field to table.",
+    "From Clarke Road and Pleasant Valley to our Hamilton Road hub: AfroBiome’s local food pipeline from field to table.",
 };
 
 export default async function FarmsPage() {
@@ -50,7 +50,7 @@ export default async function FarmsPage() {
                       src={farm.imageUrl}
                       alt={farm.name}
                       fill
-                      className="object-cover"
+                      className="object-cover transition duration-300 hover:scale-105"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>
@@ -86,12 +86,12 @@ export default async function FarmsPage() {
             <p className="mt-5 text-base leading-relaxed text-white/80">
               {page.processingBody}
             </p>
-            <div className="relative mx-auto mt-10 aspect-21/9 max-w-4xl overflow-hidden rounded-xl shadow-xl hover:scale-105 transition duration-300">
+            <div className="relative mx-auto mt-10 aspect-21/9 max-w-4xl overflow-hidden rounded-xl shadow-xl">
               <Image
                 src={page.processingImageUrl}
                 alt="Fresh produce ready for packing"
                 fill
-                className="object-cover"
+                className="object-cover transition duration-300 hover:scale-105"
                 sizes="(max-width: 896px) 100vw, 896px"
               />
             </div>

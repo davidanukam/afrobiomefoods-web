@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.subhead,
+  icons: {
+    icon: [{ url: "/AfroBiomeFoodsLogo.png", type: "image/png" }],
+    apple: [{ url: "/AfroBiomeFoodsLogo.png", type: "image/png" }],
+    shortcut: "/AfroBiomeFoodsLogo.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

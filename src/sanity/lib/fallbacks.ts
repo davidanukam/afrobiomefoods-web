@@ -36,9 +36,9 @@ export const fallbackHomePage = {
   heroSecondaryCtaLabel: "Our Story",
   problemEyebrow: "The gap we close",
   problemHeadline:
-    "Fresh African vegetables, grown here—not shipped wilted from afar.",
+    "Fresh African vegetables, grown here, not shipped wilted from afar.",
   problemBody:
-    "Traditional grocery stores in Canada often lack fresh, high-quality, affordable African vegetables like Ugu, Amaranth, Jute Mallow, and Garden Eggs. AfroBiome Foods bridges that gap from seed to plate as a nonprofit initiative—cultivating heritage crops in Ontario soil for diaspora communities who deserve food that tastes like home.",
+    "Traditional grocery stores in Canada often lack fresh, high-quality, affordable African vegetables like Ugu, Amaranth, Jute Mallow, and Garden Eggs. AfroBiome Foods bridges that gap from seed to plate as a nonprofit initiative, cultivating heritage crops in Ontario soil for diaspora communities who deserve food that tastes like home.",
   pillars,
   cropsEyebrow: "Heritage crops",
   cropsHeadline: "Greens that connect us",
@@ -57,12 +57,12 @@ export const fallbackStoryPage = {
   eyebrow: "Our Story",
   title: "Rooted in Heritage, Growing for the Future",
   subtitle:
-    "Food is more than sustenance—it is memory, medicine, and a direct connection to where we come from.",
+    "Food is more than sustenance. It is memory, medicine, and a direct connection to where we come from.",
   heroImage: null,
   heroImageUrl: images.story,
   intro: [
-    "For the vibrant African and Black diaspora communities in Southwestern Ontario, accessing fresh, high-quality, culturally relevant vegetables hasn't always been easy. Too often, traditional greens like Efo Shoko, Ewedu, and Gboma arrive thousands of miles away—wilted, heavily preserved, or priced out of reach.",
-    "At AfroBiome Foods Incorporated, we decided it was time to change that story. We are a nonprofit reclaiming food sovereignty by cultivating African-based, culturally significant vegetables right here in Ontario soil—from seed to harvest, processing to distribution.",
+    "For the vibrant African and Black diaspora communities in Southwestern Ontario, accessing fresh, high-quality, culturally relevant vegetables hasn't always been easy. Too often, traditional greens like Efo Shoko, Ewedu, and Gboma arrive thousands of miles away, wilted, heavily preserved, or priced out of reach.",
+    "At AfroBiome Foods Incorporated, we decided it was time to change that story. We are a nonprofit reclaiming food sovereignty by cultivating African-based, culturally significant vegetables right here in Ontario soil, from seed to harvest, processing to distribution.",
   ],
   missionEyebrow: "Mission",
   missionHeadline: "Food justice, sovereignty, and wellness",
@@ -71,12 +71,12 @@ export const fallbackStoryPage = {
   visionEyebrow: "Vision",
   visionHeadline: "Never compromise on heritage foods",
   visionBody:
-    "A future where every member of our community has a reliable, affordable connection to the traditional foods that nourish both body and soul—grown sustainably, processed safely, and shared generously.",
+    "A future where every member of our community has a reliable, affordable connection to the traditional foods that nourish both body and soul, grown sustainably, processed safely, and shared generously.",
   pillarsEyebrow: "The pillars that guide us",
-  pillarsHeadline: "Culture, land, and care—held together.",
+  pillarsHeadline: "Culture, land, and care, held together.",
   pillars: storyPillars,
   cultureEyebrow: "Culturally relevant foods",
-  cultureHeadline: "Food is medicine—and identity.",
+  cultureHeadline: "Food is medicine and identity.",
   cultureBody:
     "Food banks and commercial groceries rarely stock the greens our communities cook with. By growing them locally, we close that gap with dignity: fresh, familiar, and affordable.",
   cultureImage: null,
@@ -88,11 +88,11 @@ export const fallbackFarmsPage = {
   eyebrow: "Farms & Facilities",
   title: "From Our Fields to Your Table",
   subtitle:
-    "A local food pipeline spanning rural fields and an urban processing hub—every leaf handled with care.",
+    "A local food pipeline spanning rural fields and an urban processing hub. Every leaf is handled with care.",
   heroImage: null,
   heroImageUrl: farms[0].image,
   intro:
-    "By managing every step of the journey, we ensure that every leaf, pod, and vegetable is handled with respect and hygiene—from rich rural soils to a dedicated London processing hub.",
+    "By managing every step of the journey, we ensure that every leaf, pod, and vegetable is handled with respect and hygiene, from rich rural soils to a dedicated London processing hub.",
   farms: farms.map((f) => ({
     ...f,
     image: null,
@@ -116,7 +116,7 @@ export const fallbackCropsPage = {
   leafyEyebrow: "Heritage leafy greens",
   leafyHeadline: "The heart of our cultivation",
   leafyIntro:
-    "Nutrient-dense building blocks of traditional African cooking—grown for flavour and culture, not long-haul shelf life.",
+    "Nutrient-dense building blocks of traditional African cooking, grown for flavour and culture, not long-haul shelf life.",
   leafyGreens: leafyGreens.map((c) => ({ ...c, image: null, imageUrl: undefined as string | undefined })),
   vegEyebrow: "Vegetables & pods",
   vegHeadline: "Sun-loving crops from Pleasant Valley",
@@ -124,7 +124,7 @@ export const fallbackCropsPage = {
   qualityEyebrow: "Quality standards",
   qualityHeadline: "Chemical-free growing. Careful packing.",
   qualityBody:
-    "We farm with an organic-first mentality—no synthetic preservatives on the plate. At Hamilton Road, greens are triple-washed and packaged to lock in moisture and traditional flavour from field to family table.",
+    "We farm with an organic-first mentality and no synthetic preservatives on the plate. At Hamilton Road, greens are triple-washed and packaged to lock in moisture and traditional flavour from field to family table.",
   sections: [] as import("@/components/SectionRenderer").CmsSection[],
 };
 
@@ -132,14 +132,14 @@ export const fallbackImpactPage = {
   eyebrow: "Community Impact",
   title: "Impact You Can Taste",
   subtitle:
-    "Social return for donors, partners, and grant-makers—measured in meals, families, and shared labour.",
+    "Social return for donors, partners, and grant-makers, measured in meals, families, and shared labour.",
   heroImage: null,
   heroImageUrl: images.impact,
   metrics: impactMetrics,
   foodBoxEyebrow: "Food Box Program",
   foodBoxHeadline: "Culturally Relevant Food Boxes",
   foodBoxBody: [
-    "Low-income families in London and surrounding areas access subsidized or free baskets of heritage vegetables—fresh from our farms, packed at Hamilton Road, and delivered with dignity.",
+    "Low-income families in London and surrounding areas access subsidized or free baskets of heritage vegetables, fresh from our farms, packed at Hamilton Road, and delivered with dignity.",
     "We partner with local food banks, Black-led community groups, and cultural associations to widen access across Southwestern Ontario.",
   ],
   foodBoxImage: null,
@@ -148,7 +148,7 @@ export const fallbackImpactPage = {
   sroiHeadline:
     "Every $10 grows roughly 3 pounds of heritage vegetables",
   sroiBody:
-    "Donations cultivate and distribute fresh African heritage vegetables directly to diaspora families—shortening food miles, boosting local agriculture, and preserving culinary legacy.",
+    "Donations cultivate and distribute fresh African heritage vegetables directly to diaspora families, shortening food miles, boosting local agriculture, and preserving culinary legacy.",
   sroiCtaLabel: "Support our mission",
   sections: [] as import("@/components/SectionRenderer").CmsSection[],
 };
@@ -157,12 +157,12 @@ export const fallbackGetInvolvedPage = {
   eyebrow: "Get Involved",
   title: "Grow with us",
   subtitle:
-    "Whether you want to get your hands dirty, fund a family's food supply, or partner for food justice—there is a place for you.",
+    "Whether you want to get your hands dirty, fund a family's food supply, or partner for food justice, there is a place for you.",
   heroImage: null,
   heroImageUrl: images.involved,
   volunteerTitle: "Volunteer",
   volunteerBody:
-    "Get your hands dirty at Clarke Road (London) or Pleasant Valley (Aylmer)—planting, weeding, harvesting—or help sort and pack at Hamilton Road. No farming experience required.",
+    "Get your hands dirty at Clarke Road (London) or Pleasant Valley (Aylmer), planting, weeding, and harvesting, or help sort and pack at Hamilton Road. No farming experience required.",
   volunteerBullets: [
     "On the farms: seasonal planting & harvest",
     "At the hub: wash, sort & pack food boxes",
@@ -171,7 +171,7 @@ export const fallbackGetInvolvedPage = {
   volunteerCtaLabel: "Apply to volunteer →",
   donateTitle: "Donate",
   donateBody:
-    "Every dollar fuels food sovereignty—seeds, tools, greenhouse heat, and subsidized boxes for households who need them most.",
+    "Every dollar fuels food sovereignty: seeds, tools, greenhouse heat, and subsidized boxes for households who need them most.",
   donationTiers,
   donateCtaLabel: "Donate securely",
   partnerTitle: "Partner",
@@ -187,5 +187,39 @@ export const fallbackGetInvolvedPage = {
   newsletterBody:
     "Seasonal harvest updates, volunteer opportunities, and traditional recipes that taste like home.",
   newsletterCtaLabel: "Join our circle",
+  sections: [] as import("@/components/SectionRenderer").CmsSection[],
+};
+
+export const fallbackDirectorsPage = {
+  eyebrow: "Leadership",
+  title: "Our Directors",
+  subtitle:
+    "The people who steer AfroBiome Foods, from strategy and research to farms, outreach, and daily operations.",
+  heroImage: null,
+  heroImageUrl: "",
+  people: [
+    {
+      name: "Kingsley Anukam",
+      role: "Executive Director",
+      bio: "Leads overall AfroBiome Foods strategic planning, budget, proposal development, and research.",
+      photo: null,
+      photoUrl: "",
+      emails: ["afrobiomefoods@gmail.com", "kingsleya@afrobiomefoods.ca"],
+      phone: "+1 (226) 504-1598",
+    },
+    {
+      name: "Marie-Goretti Nkwawir",
+      role: "Operations Manager",
+      bio: "Supervises farm operations and vegetable crop planning, along with community outreach and marketing.",
+      photo: null,
+      photoUrl: "",
+      emails: [
+        "afrobiomefoods@gmail.com",
+        "gorettibongka77@gmail.com",
+        "marieg@afrobiomefoods.ca",
+      ],
+      phone: "+1 (519) 872-0687",
+    },
+  ],
   sections: [] as import("@/components/SectionRenderer").CmsSection[],
 };
