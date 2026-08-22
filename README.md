@@ -1,6 +1,6 @@
 # AfroBiome Foods Website
 
-Nonprofit marketing site for AfroBiome Foods Incorporated — cultivating culturally relevant African vegetables for Black and African diaspora communities in Southwestern Ontario.
+Nonprofit marketing site for AfroBiome Foods Incorporated, cultivating culturally relevant African vegetables for Black and African diaspora communities in Southwestern Ontario.
 
 ## Design
 
@@ -35,6 +35,7 @@ Until Sanity env vars are set, the site uses fallback content from `src/content/
 | `/crops` | Our Crops |
 | `/impact` | Community Impact |
 | `/get-involved` | Volunteer / Donate / Partner |
+| `/directors` | Directors |
 | `/studio` | Sanity Studio (editors only) |
 | `/api/revalidate` | Publish webhook |
 
@@ -69,10 +70,10 @@ npm run seed
 ### How staff edit the live site
 
 1. Go to `/studio` (or your deployed `https://yoursite.com/studio`).
-2. Open a document: **Site Settings**, **Home Page**, **Our Story**, **Farms**, **Crops**, **Impact**, or **Get Involved**.
+2. Open a document: **Site Settings**, **Home Page**, **Our Story**, **Farms**, **Crops**, **Impact**, **Get Involved**, or **Directors**.
 3. Change text fields and/or upload images.
 4. Click **Publish**.
-5. The public site refreshes via the revalidate webhook (see below)—usually within seconds. Without the webhook, content still updates within ~60s (ISR) or on the next deploy.
+5. The public site refreshes via the revalidate webhook (see below), usually within seconds. Without the webhook, content still updates within ~60s (ISR) or on the next deploy.
 
 ### Add crop / produce cards
 
@@ -125,11 +126,11 @@ Use the same secret as `SANITY_REVALIDATE_SECRET` in `.env.local` / hosting env.
 
 Singletons (one document each), editable in Studio:
 
-- `siteSettings` — brand, emails, locations, nav links, footer/newsletter
-- `homePage`, `storyPage`, `farmsPage`, `cropsPage`, `impactPage`, `getInvolvedPage` — each supports **Extra / custom sections**
+- `siteSettings`: brand, emails, locations, nav links, footer/newsletter
+- `homePage`, `storyPage`, `farmsPage`, `cropsPage`, `impactPage`, `getInvolvedPage`, `directorsPage`: each supports **Extra / custom sections**
 
 Plus document type:
 
-- `page` — custom pages at `/[slug]` built entirely from sections
+- `page`: custom pages at `/[slug]` built entirely from sections
 
 Fallback copy lives in `src/content/site.ts` and `src/sanity/lib/fallbacks.ts` if Sanity is offline or unset.

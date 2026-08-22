@@ -180,7 +180,7 @@ function CardGridBlock({ section }: { section: CmsSection }) {
                         src={imageUrl}
                         alt={title}
                         fill
-                        className="object-cover"
+                        className="object-cover transition duration-300 hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />
                     </div>
@@ -293,7 +293,7 @@ function ImageTextBlock({ section }: { section: CmsSection }) {
                 src={imageUrl}
                 alt={String(section.title || "")}
                 fill
-                className="object-cover"
+                className="object-cover transition duration-300 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             ) : null}

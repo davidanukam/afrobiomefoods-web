@@ -11,7 +11,7 @@ import { getImpactPage } from "@/sanity/lib/load-query";
 export const metadata: Metadata = {
   title: "Community Impact",
   description:
-    "Pounds of food distributed, families supported, and volunteer hours—AfroBiome’s social return for Southwestern Ontario.",
+    "Pounds of food distributed, families supported, and volunteer hours. AfroBiome’s social return for Southwestern Ontario.",
 };
 
 export default async function ImpactPage() {
@@ -52,7 +52,7 @@ export default async function ImpactPage() {
                 src={page.foodBoxImageUrl}
                 alt="Community food distribution"
                 fill
-                className="object-cover"
+                className="object-cover transition duration-300 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

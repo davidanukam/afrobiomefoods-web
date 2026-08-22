@@ -1,4 +1,5 @@
 import { cropsPage } from "./cropsPage";
+import { directorsPage } from "./directorsPage";
 import { farmsPage } from "./farmsPage";
 import { getInvolvedPage } from "./getInvolvedPage";
 import { homePage } from "./homePage";
@@ -16,6 +17,7 @@ export const schemaTypes = [
   cropsPage,
   impactPage,
   getInvolvedPage,
+  directorsPage,
   page,
   ...sectionTypes,
 ];

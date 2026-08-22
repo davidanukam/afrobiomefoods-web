@@ -9,7 +9,7 @@ import { getCropsPage } from "@/sanity/lib/load-query";
 export const metadata: Metadata = {
   title: "Our Crops",
   description:
-    "Heritage leafy greens and vegetables—Amaranth, Ugu, Ewedu, Garden Eggs, and more—grown chemical-free in Southwestern Ontario.",
+    "Heritage leafy greens and vegetables including Amaranth, Ugu, Ewedu, Garden Eggs, and more, grown chemical-free in Southwestern Ontario.",
 };
 
 function CropGrid({
@@ -33,7 +33,7 @@ function CropGrid({
                   src={crop.imageUrl}
                   alt={crop.name}
                   fill
-                  className="object-cover"
+                  className="object-cover transition duration-300 hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>

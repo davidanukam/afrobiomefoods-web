@@ -12,6 +12,7 @@
 import { createClient } from "@sanity/client";
 import {
   fallbackCropsPage,
+  fallbackDirectorsPage,
   fallbackFarmsPage,
   fallbackGetInvolvedPage,
   fallbackHomePage,
@@ -153,6 +154,20 @@ async function seed() {
       heroImage: involvedHero,
       donationTiers: withKeys(fallbackGetInvolvedPage.donationTiers, "amount"),
     },
+    {
+      _id: "directorsPage",
+      _type: "directorsPage",
+      ...omitUrls(fallbackDirectorsPage),
+      people: fallbackDirectorsPage.people.map((person) => ({
+        _key: person.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 40),
+        _type: "director",
+        name: person.name,
+        role: person.role,
+        bio: person.bio,
+        emails: person.emails,
+        phone: person.phone,
+      })),
+    },
   ];
 
   const tx = client.transaction();
@@ -170,7 +185,7 @@ function omitUrls<T extends Record<string, unknown>>(obj: T) {
       delete next[key];
     }
   }
-  // Remove nested imageUrl on farms if present via shallow — handled separately
+  // Remove nested imageUrl on farms if present via shallow. Handled separately.
   if ("farms" in next) delete next.farms;
   if ("image" in next && next.image === null) delete next.image;
   for (const key of Object.keys(next)) {

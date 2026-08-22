@@ -1,4 +1,4 @@
-# AfroBiome Foods — One-Page Design Brief
+# AfroBiome Foods: One-Page Design Brief
 
 **Brand:** AfroBiome Foods Incorporated (nonprofit)  
 **Tagline:** Nourishing Community. Preserving Heritage.  
@@ -8,7 +8,7 @@
 
 ## 1. Positioning
 
-Heritage-first food sovereignty site — not a grocery shop, not a pity-charity, not DTC snack branding.  
+Heritage-first food sovereignty site: not a grocery shop, not a pity-charity, not DTC snack branding.  
 First viewport must read as one composition: brand + one headline + one supporting line + one CTA + full-bleed farm photography.
 
 ---
@@ -93,7 +93,7 @@ No decorative noise animations.
 ```
 
 ### Our Story
-Mission / Vision / three pillars (sovereignty, stewardship, care) — editorial long-form, photo breaks.
+Mission / Vision / three pillars (sovereignty, stewardship, care): editorial long-form, photo breaks.
 
 ### Farms & Facilities
 Pipeline chapters: Clarke Road → Pleasant Valley → Hamilton Road (photo + short copy each).

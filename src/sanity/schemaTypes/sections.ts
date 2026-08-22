@@ -212,6 +212,7 @@ export const pageSectionsField = defineField({
   description:
     "Add any number of flexible sections (card grids, heroes, metrics, CTAs, etc.). New cards go inside a Card grid section.",
   type: "array",
+  group: "extra",
   of: sectionTypes.map((type) =>
     defineArrayMember({ type: type.name, title: type.title }),
   ),

@@ -70,6 +70,12 @@ export const getInvolvedPageQuery = `*[_id == "getInvolvedPage"][0]{
   ${sectionsProjection}
 }`;
 
+export const directorsPageQuery = `*[_id == "directorsPage"][0]{
+  eyebrow, title, subtitle, heroImage,
+  people[]{name, role, bio, photo, emails, phone},
+  ${sectionsProjection}
+}`;
+
 export const customPageBySlugQuery = `*[_type == "page" && slug.current == $slug][0]{
   title,
   description,

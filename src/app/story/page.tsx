@@ -9,7 +9,7 @@ import { getStoryPage } from "@/sanity/lib/load-query";
 export const metadata: Metadata = {
   title: "Our Story",
   description:
-    "Rooted in heritage, growing for the future—AfroBiome Foods fosters food sovereignty for African and Black diaspora communities in Southwestern Ontario.",
+    "Rooted in heritage, growing for the future. AfroBiome Foods fosters food sovereignty for African and Black diaspora communities in Southwestern Ontario.",
 };
 
 export default async function StoryPage() {
@@ -86,12 +86,12 @@ export default async function StoryPage() {
 
       <section className="relative overflow-hidden">
         <div className="grid lg:grid-cols-2">
-          <div className="relative min-h-[320px] lg:min-h-[480px]">
+          <div className="relative min-h-[320px] overflow-hidden lg:min-h-[480px]">
             <Image
               src={page.cultureImageUrl}
               alt="Fresh leafy greens and vegetables"
               fill
-              className="object-cover"
+              className="object-cover transition duration-300 hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
